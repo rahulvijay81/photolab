@@ -1,8 +1,12 @@
-
+import React from 'react'
+import Login from './component/Login/Login';
+import './App.scss'
 
 function App() {
   return (
-    <h1>photo lab </h1>
+   <div>
+    <Login/>
+   </div>
   );
 }
 
