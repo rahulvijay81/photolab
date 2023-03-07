@@ -4,6 +4,7 @@ $primary-color: #F7F6F2;
 $button-color: #537FE7;
 $input-color: #E5E0FF;
 $font-color: #191919;
+$whitefont: #ffff;
 $font-stack: "Source Sans Pro", sans-serif;
 
 .bg-login {
@@ -76,7 +77,7 @@ $font-stack: "Source Sans Pro", sans-serif;
   width: 400px;
   height: 40px;
   background-color: $button-color;
-  color: $input-color;
+  color: $whitefont;
   font-size: 16px;
   letter-spacing: 1px;
   border: none;
