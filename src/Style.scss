@@ -115,4 +115,141 @@ $font-stack: "Source Sans Pro", sans-serif;
   }
 }
 
-// sidebar style
+// header style
+
+.headerParentDiv{
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  position: fixed;
+  background-color: $whitefont;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px -5px, rgba(0, 0, 0, 0.3) 0px 8px 5px -6px;
+}
+.headerChildDiv {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brandName{
+  padding-left: 25px;
+  font-size: 30px;
+  font-weight: 700;
+  color: $blue;
+}
+.searcharea input{
+  width: 25rem;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 15px;
+  border: none;
+  background-color: $input-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.searcharea input:focus{
+  outline: none;
+}
+.logoutbutton{
+  width: 100px;
+  height: 35px;
+  background-color: $button-color;
+  color: $whitefont;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.postParentDiv{
+  padding-top: 80px;
+  padding-left: 15px;
+  display: flex;
+}
+.postChildDiv{
+  width: 350px;
+  height: 300px;
+  background-color: $whitefont;
+  border-radius: 10px;
+  position: fixed;
+
+  .profile{
+    width: 100%;
+
+    .profileimg{
+      display: block;
+      margin: 0 auto;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-size: cover;
+      background-image: url(../public/Assets/userlogo);
+    }
+
+    h6{
+      font-size: 14px;
+      font-weight: 500;
+      color: $blue;
+      padding: 20px;
+    }
+    h3{
+      padding-top: 10px;
+      text-align: center;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+    p{
+      text-align: center;
+    }
+    .imgupload{
+      width: 100px;
+      height: 40px;
+      background-color: $button-color;
+      color: $whitefont;
+      font-size: 16px;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      border: none;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+.postarea{
+  width: 800px;
+  height: 100%;
+  background-color: transparent;
+  margin-left: 350px;
+  border-radius: 10px;
+}
+.box{
+  display: grid;
+  margin: 10px auto;
+  width: 600px;
+  height: 500px;
+  background-color: $whitefont;
+  border-radius: 10px;
+
+  h4{
+    padding: 10px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+  .postimages img{
+    display: block;
+    margin: 0 auto;
+    width: 550px;
+    max-width: 100%;
+    height: 350px;
+    border-radius: 5px;
+  }
+}
+
+.activityChildDiv{
+  float: right;
+  width: 300px;
+  height: 100vh;
+  border-radius: 10px;
+  background-color: $whitefont;
+}

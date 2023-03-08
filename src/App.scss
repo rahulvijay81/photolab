@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
 $font-stack: 'Source Sans Pro', sans-serif;
+$primary-color: #f7f6f2;
 
 *{
     margin: 0;
     font-family: $font-stack;
+}
+body{
+    background-color: $primary-color;
 }
