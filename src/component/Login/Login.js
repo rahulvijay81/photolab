@@ -2,7 +2,7 @@ import React from 'react'
 import '../../Style.scss'
 import { FcGoogle } from 'react-icons/fc';
 
-function Login() {
+function Login  ()  {
   return (
     <div className='bg-login'>
       <div className='flex-container'>

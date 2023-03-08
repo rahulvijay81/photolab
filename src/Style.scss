@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
-$primary-color: #F7F6F2;
-$button-color: #537FE7;
-$input-color: #E5E0FF;
+$primary-color: #f7f6f2;
+$button-color: #537fe7;
+$input-color: #e5e0ff;
 $font-color: #191919;
 $whitefont: #ffff;
+$blue: #205295;
 $font-stack: "Source Sans Pro", sans-serif;
 
 .bg-login {
@@ -96,17 +97,17 @@ $font-stack: "Source Sans Pro", sans-serif;
   border-radius: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.icon{
+.icon {
   width: 30px;
   height: 30px;
   margin-right: 10px;
   vertical-align: middle;
 }
 
-.create-btn{
+.create-btn {
   margin-top: 60px;
 
-  span{
+  span {
     color: $button-color;
     font-weight: 700;
     letter-spacing: 1px;
@@ -114,3 +115,4 @@ $font-stack: "Source Sans Pro", sans-serif;
   }
 }
 
+// sidebar style
