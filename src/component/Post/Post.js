@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../Style.scss'
-import {FaUserAlt} from 'react-icons/fa'
 import imgcheck from '../../store/Image_created_with_a_mobile_phone.png.webp'
 
 function Post() {
@@ -8,11 +7,13 @@ function Post() {
     <div>
       <div className="postarea">
         <div className="box">
-          <h4><FaUserAlt/> Rahul Vijay</h4>
           <div className='postimages'>
             <img src={imgcheck} alt="" />
+            <p>Upload by Rahul Vijay</p>
           </div>
         </div>
+        
+
         <div className="box"></div>
 
       </div>

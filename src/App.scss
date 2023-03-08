@@ -7,6 +7,9 @@ $primary-color: #f7f6f2;
     margin: 0;
     font-family: $font-stack;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: $primary-color;
 }
