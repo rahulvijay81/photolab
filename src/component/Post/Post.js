@@ -9,7 +9,8 @@ function Post() {
         <div className="box">
           <div className='postimages'>
             <img src={imgcheck} alt="" />
-            <p>Upload by Rahul Vijay</p>
+            <p>Post by Rahul Vijay</p>
+            <p>04/03/2023</p>
           </div>
         </div>
         

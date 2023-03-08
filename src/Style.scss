@@ -236,9 +236,9 @@ $font-stack: "Source Sans Pro", sans-serif;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   p{
-    padding: 10px;
+    padding-left: 25px;
     font-weight: 500;
-    letter-spacing: 1px;
+    color: $font-color;
   }
   .postimages img{
     display: block;
