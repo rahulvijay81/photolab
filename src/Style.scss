@@ -7,6 +7,7 @@ $font-color: #191919;
 $whitefont: #ffff;
 $blue: #205295;
 $font-stack: "Source Sans Pro", sans-serif;
+$font-style: Verdana, Geneva, Tahoma, sans-serif;
 
 .bg-login {
   width: 100%;
@@ -117,13 +118,14 @@ $font-stack: "Source Sans Pro", sans-serif;
 
 // header style
 
-.headerParentDiv{
+.headerParentDiv {
   width: 100%;
   height: 50px;
   padding: 10px;
   position: fixed;
   background-color: $whitefont;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px -5px, rgba(0, 0, 0, 0.3) 0px 8px 5px -6px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 5px -6px;
 }
 .headerChildDiv {
   width: 95%;
@@ -131,17 +133,18 @@ $font-stack: "Source Sans Pro", sans-serif;
   justify-content: space-between;
   align-items: center;
 }
-.brandName{
+.brandName {
   padding-left: 25px;
   font-size: 30px;
   font-weight: 700;
   color: $blue;
 }
-.searcharea input{
+.searcharea input {
   width: 25rem;
   height: 40px;
   padding-left: 10px;
   border-radius: 15px;
+  font-family: $font-style;
   border: none;
   background-color: $input-color;
   display: flex;
@@ -149,10 +152,10 @@ $font-stack: "Source Sans Pro", sans-serif;
   justify-content: space-between;
 }
 
-.searcharea input:focus{
+.searcharea input:focus {
   outline: none;
 }
-.logoutbutton{
+.logoutbutton {
   width: 100px;
   height: 35px;
   background-color: $button-color;
@@ -162,23 +165,23 @@ $font-stack: "Source Sans Pro", sans-serif;
   border-radius: 10px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-.postParentDiv{
+.postParentDiv {
   padding-top: 80px;
   padding-left: 15px;
   display: flex;
 }
-.postChildDiv{
+.postChildDiv {
   width: 300px;
-  height: 300px;
+  height: 350px;
   background-color: $whitefont;
   border-radius: 10px;
   position: fixed;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  .profile{
+  .profile {
     width: 100%;
 
-    .profileimg{
+    .profileimg {
       display: block;
       margin: 0 auto;
       width: 80px;
@@ -188,22 +191,28 @@ $font-stack: "Source Sans Pro", sans-serif;
       background-image: url(../public/Assets/userlogo);
     }
 
-    h6{
+    h6 {
       font-size: 14px;
       font-weight: 500;
       color: $blue;
       padding: 20px;
+      font-family: $font-style;
     }
-    h3{
+    h3 {
       padding-top: 10px;
       text-align: center;
       font-size: 22px;
       letter-spacing: 1px;
     }
-    p{
+    p {
       text-align: center;
+      font-family: $font-style;
     }
-    .imgupload{
+    input {
+      display: block;
+      margin: 0 auto;
+    }
+    .imgupload {
       width: 100px;
       height: 40px;
       background-color: $button-color;
@@ -219,14 +228,14 @@ $font-stack: "Source Sans Pro", sans-serif;
     }
   }
 }
-.postarea{
+.postarea {
   width: 800px;
   height: 100%;
   background-color: transparent;
   margin-left: 250px;
   border-radius: 10px;
 }
-.box{
+.box {
   display: grid;
   margin: 10px auto;
   width: 600px;
@@ -235,12 +244,13 @@ $font-stack: "Source Sans Pro", sans-serif;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  p{
+  p {
     padding-left: 25px;
-    font-weight: 500;
+    font-size: 14px;
     color: $font-color;
+    font-family: $font-style;
   }
-  .postimages img{
+  .postimages img {
     display: block;
     margin: 20px auto;
     width: 550px;
@@ -250,11 +260,65 @@ $font-stack: "Source Sans Pro", sans-serif;
   }
 }
 
-.activityChildDiv{
+.activityChildDiv {
   float: right;
   width: 300px;
   height: 100vh;
   border-radius: 10px;
   background-color: $whitefont;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.signupParentDiv {
+  width: 400px;
+  height: 300px;
+  background-color: $primary-color;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.signupParentDiv input {
+  width: 100%;
+  padding-top: 10px;
+  background-color: $input-color;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 5px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  outline-color: transparent;
+}
+
+.signupParentDiv button {
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  border-color: transparent;
+  background-color: $button-color;
+  color: $whitefont;
+  font-weight: 600;
+}
+.signupParentDiv button:hover {
+  background-color: $input-color;
+  color: $font-color;
+  border: none;
+}
+
+.signupParentDiv a {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  color: $blue;
+  text-decoration: none;
+  padding-top: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
