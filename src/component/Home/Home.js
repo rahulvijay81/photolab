@@ -2,7 +2,7 @@ import React from 'react'
 import Activity from '../AddPost/Activity'
 import AddPost from '../AddPost/AddPost'
 import Header from '../Header/Header'
-import Post from '../Post/Post'
+import Posts from '../Post/Posts'
 
 function Home() {
   return (
@@ -10,7 +10,7 @@ function Home() {
       <Header/>
       <AddPost/>
       <Activity/>
-      <Post/>
+      <Posts/>
     </div>
   )
 }

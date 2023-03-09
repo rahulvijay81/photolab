@@ -7,9 +7,9 @@ function Post({ children }) {
     const [postDetails, setPostDetails] = useState(null);
 
     return (
-        <AuthContext.Provider value={{ postDetails, setPostDetails }}>
+        <PostContext.Provider value={{ postDetails, setPostDetails }}>
             {children}
-        </AuthContext.Provider>
+        </PostContext.Provider>
     )
 }
 
