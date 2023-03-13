@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../Style.scss'
-
+import PasswordChecklist from 'react-password-checklist'
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FirebaseContext } from '../../store/Context'
@@ -19,17 +19,17 @@ export default function Signup() {
     const handleSubmit = (e) => {
         e.preventDefault()
         firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
-          result.user.updateProfile({ displayName: username }).then(() => {
-            firebase.firestore().collection('users').add({
-              id: result.user.uid,
-              username: username,
-              phone: phone
-            }).then(() => {
-              navigate('/login')
+            result.user.updateProfile({ displayName: username }).then(() => {
+                firebase.firestore().collection('users').add({
+                    id: result.user.uid,
+                    username: username,
+                    phone: phone
+                }).then(() => {
+                    navigate('/login')
+                })
             })
-          })
         })
-      }
+    }
 
     return (
         <div>
@@ -77,6 +77,13 @@ export default function Signup() {
                         onChange={(e) => setPassword(e.target.value)}
                         id="lname"
                         name="password"
+                    />
+                    <PasswordChecklist
+                        rules={["minLength"]}
+                        minLength={10}
+                        value={password}
+                        valueAgain={password}
+                        onChange={(isValid) => {}}
                     />
                     <br />
                     <br />
