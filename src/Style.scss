@@ -85,6 +85,12 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   border: none;
   border-radius: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: $input-color;
+  color: $font-color;
 }
 
 .signup-btn {
@@ -269,6 +275,8 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+// singup page style
+
 .signupParentDiv {
   width: 400px;
   height: 300px;
@@ -285,6 +293,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
 .signupParentDiv input {
   width: 100%;
   padding-top: 10px;
+  padding: 5px;
   background-color: $input-color;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 5px;
@@ -292,9 +301,11 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: transparent;
-  outline-color: transparent;
 }
 
+.signupParentDiv .input:focus {
+  outline: none;
+}
 .signupParentDiv button {
   width: 100%;
   height: 48px;
