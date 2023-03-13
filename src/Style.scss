@@ -8,6 +8,8 @@ $whitefont: #ffff;
 $blue: #205295;
 $font-stack: "Source Sans Pro", sans-serif;
 $font-style: Verdana, Geneva, Tahoma, sans-serif;
+$btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
 
 .bg-login {
   width: 100%;
@@ -45,7 +47,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   margin: 80px auto;
   padding-top: 25px;
   padding-left: 50px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: $btn-shadow;
   border-radius: 10px;
 
   label {
@@ -84,7 +86,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 1px;
   border: none;
   border-radius: 5px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: $btn-shadow;
   cursor: pointer;
 }
 
@@ -102,7 +104,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   letter-spacing: 1px;
   border: none;
   border-radius: 5px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: $btn-shadow;
 }
 .icon {
   width: 30px;
@@ -130,8 +132,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   padding: 10px;
   position: fixed;
   background-color: $whitefont;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 5px 10px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 5px -6px;
+  box-shadow: $btn-shadow;
 }
 .headerChildDiv {
   width: 95%;
@@ -169,7 +170,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   border: none;
   border-radius: 10px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: $btn-shadow;
   cursor: pointer;
 }
 .postParentDiv {
@@ -183,7 +184,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   background-color: $whitefont;
   border-radius: 10px;
   position: fixed;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: $btn-shadow;
 
   .profile {
     width: 100%;
@@ -210,7 +211,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
       margin: 0 auto;
     }
     .imgupload {
-      width: 100px;
+      width: 200px;
       height: 40px;
       background-color: $button-color;
       color: $whitefont;
@@ -221,7 +222,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
       display: block;
       margin: 0 auto;
       cursor: pointer;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      box-shadow: $btn-shadow;
     }
   }
 }
@@ -239,7 +240,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   height: 450px;
   background-color: $whitefont;
   border-radius: 10px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: $btn-shadow;
 
   p {
     padding-left: 25px;
@@ -263,7 +264,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   height: 100vh;
   border-radius: 10px;
   background-color: $whitefont;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: $btn-shadow;
 }
 
 // singup page style
@@ -272,7 +273,7 @@ $font-style: Verdana, Geneva, Tahoma, sans-serif;
   width: 400px;
   height: 350px;
   background-color: $primary-color;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: $btn-shadow;
   padding: 30px;
   position: absolute;
   top: 50%;
