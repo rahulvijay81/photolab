@@ -25,20 +25,19 @@ function Post() {
 
   return (
     <div>
-      {products.map(product => {
-        return <div className="postarea">
-          <div className="box">
-            <div className='postimages' onClick={() => {
+      <div className="postarea">
+        <div className="box">
+          {products.map(product => {
+            return <div className='postimages' onClick={() => {
               setPostDetails(product)
               navigate('/')
             }}>
               <img src={product.url} alt="" />
             </div>
-          </div>
+          })
+          }
         </div>
-      })
-      }
-
+      </div>
     </div>
   );
 }

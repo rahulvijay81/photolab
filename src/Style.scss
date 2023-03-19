@@ -227,44 +227,29 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 }
 .postarea {
-  width: 800px;
+  width: 100%;
   height: 100%;
   background-color: transparent;
-  margin-left: 250px;
   border-radius: 10px;
 }
 .box {
-  display: grid;
-  margin: 10px auto;
-  width: 600px;
-  height: 450px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
   background-color: $whitefont;
   border-radius: 10px;
   box-shadow: $btn-shadow;
 
-  p {
-    padding-left: 25px;
-    font-size: 14px;
-    color: $font-color;
-    font-family: $font-style;
+  .postimages{
+    display: inline-block;
   }
   .postimages img {
-    display: block;
-    margin: 20px auto;
-    width: 550px;
+    margin: 10px;
+    width: 250px;
     max-width: 100%;
-    height: 350px;
+    height: 150px;
     border-radius: 5px;
   }
-}
-
-.activityChildDiv {
-  float: right;
-  width: 300px;
-  height: 100vh;
-  border-radius: 10px;
-  background-color: $whitefont;
-  box-shadow: $btn-shadow;
 }
 
 // singup page style
