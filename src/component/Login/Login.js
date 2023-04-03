@@ -1,13 +1,17 @@
-import React from 'react'
-import '../../Style.scss'
+import React, { useEffect } from 'react'
 import { FcGoogle } from 'react-icons/fc';
 import { useState, useContext } from 'react';
 import { FirebaseContext } from '../../store/Context';
 import { useNavigate } from 'react-router-dom';
+import { auth, provider } from '../../firebase/Config'
+import { signInWithPopup } from 'firebase/auth';
+import '../../Style.scss'
+
 
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [value, setValue] = useState('')
   const navigate = useNavigate()
   const { firebase } = useContext(FirebaseContext)
 
@@ -19,6 +23,20 @@ function Login() {
       alert(Error.message)
     })
   }
+
+  const handleClick = () => {
+    signInWithPopup(auth, provider).then((data) => {
+      setValue(data.user.email)
+      localStorage.setItem(email, data.user.email)
+      navigate("/")
+    }).catch((Error)=>{
+      alert(Error.message)
+    })
+  }
+
+  useEffect(() => {
+    setValue(localStorage.getItem('email'))
+  }, [])
 
   return (
     <div className='bg-login'>
@@ -50,11 +68,15 @@ function Login() {
               <br />
               <button className='login-btn'>Login</button>
               <p>or</p>
-              <button className='signup-btn'>
-                <FcGoogle
-                  className='icon'
-                />
-                Sign-in with google</button>
+              {value ? value :
+                <button
+                  onClick={handleClick}
+                  className='signup-btn'>
+                  <FcGoogle
+                    className='icon'
+                  />
+                  Sign-in with google</button>
+              }
               <br />
               <br />
               <p className='create-btn'>Don't have an account?<span

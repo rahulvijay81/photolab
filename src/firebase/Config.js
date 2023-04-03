@@ -5,6 +5,7 @@ import 'firebase/compat/storage'
 import 'firebase/auth'
 import 'firebase/firestore'
 import 'firebase/storage';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
 
 
@@ -18,5 +19,7 @@ const firebaseConfig = {
   measurementId: "G-KTNKFKXNCE"
 };
 
-
-export default firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+export { auth, provider, firebase }

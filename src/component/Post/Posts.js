@@ -13,7 +13,7 @@ function Post() {
 
   useEffect(() => {
     firebase.firestore().collection('products').get().then((snapshot) => {
-      const allPost = snapshot.docs.map((product) => {
+      const allPost = snapshot.docs.map((product,id) => {
         return {
           ...product.data(),
           id: product.id
@@ -28,11 +28,11 @@ function Post() {
       <div className="postarea">
         <div className="box">
           {products.map(product => {
-            return <div className='postimages' onClick={() => {
+            return <div className='postimages' key={product.id} onClick={() => {
               setPostDetails(product)
               navigate('/')
             }}>
-              <img src={product.url} alt="" />
+              <img key={product.id} src={product.url} alt="" />
             </div>
           })
           }
