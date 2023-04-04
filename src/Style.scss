@@ -162,6 +162,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .searcharea input:focus {
   outline: none;
 }
+
 .logoutbutton {
   width: 100px;
   height: 35px;
@@ -169,13 +170,11 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   color: $whitefont;
   font-size: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: $btn-shadow;
   cursor: pointer;
 }
 .postParentDiv {
-  padding-top: 80px;
-  padding-left: 15px;
   display: flex;
 }
 .postChildDiv {
@@ -227,28 +226,44 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   }
 }
 .postarea {
+  padding-top: 80px;
   width: 100%;
   height: 100%;
   background-color: transparent;
   border-radius: 10px;
 }
+.upload-btn{
+  width: 100px;
+  height: 35px;
+  background-color: $button-color;
+  color: $whitefont;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: $btn-shadow;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
 .box {
-  display: block;
-  margin: 0 auto;
   width: 100%;
   background-color: $whitefont;
   border-radius: 10px;
   box-shadow: $btn-shadow;
+  padding: 5px 25px;
 
   .postimages{
     display: inline-block;
+    margin: 5px 5px ;
   }
   .postimages img {
-    margin: 10px;
     width: 250px;
     max-width: 100%;
-    height: 150px;
-    border-radius: 5px;
+    height: 180px;
+  }
+  .postimages:hover{
+    transform: scale(1.1);
+    transition: 5ms;
   }
 }
 
