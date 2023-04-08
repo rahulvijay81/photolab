@@ -37,7 +37,7 @@ function Post() {
           {products.map(product => {
             return <div className='postimages' key={product.id} onClick={() => {
               setPostDetails(product)
-              navigate('/')
+              navigate('/home')
             }}>
               <img key={product.id} src={product.url} alt="" />
             </div>

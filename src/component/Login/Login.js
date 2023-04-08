@@ -18,7 +18,7 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault()
     firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      navigate("/")
+      navigate("/home")
     }).catch((Error) => {
       alert(Error.message)
     })
@@ -28,7 +28,7 @@ function Login() {
     signInWithPopup(auth, provider).then((data) => {
       setValue(data.user.email)
       localStorage.setItem(email, data.user.email)
-      navigate("/")
+      navigate("/home")
     }).catch((Error)=>{
       alert(Error.message)
     })

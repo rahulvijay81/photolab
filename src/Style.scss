@@ -146,22 +146,6 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   font-weight: 700;
   color: $blue;
 }
-.searcharea input {
-  width: 25rem;
-  height: 40px;
-  padding-left: 10px;
-  border-radius: 15px;
-  font-family: $font-style;
-  border: none;
-  background-color: $input-color;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.searcharea input:focus {
-  outline: none;
-}
 
 .logoutbutton {
   width: 100px;
@@ -247,17 +231,14 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .box {
   width: 100%;
-  background-color: $whitefont;
   border-radius: 10px;
-  box-shadow: $btn-shadow;
-  padding: 5px 25px;
 
   .postimages{
     display: inline-block;
-    margin: 5px 5px ;
+    margin-left: 10px;
   }
   .postimages img {
-    width: 250px;
+    width: 260px;
     max-width: 100%;
     height: 180px;
   }
@@ -271,7 +252,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 .signupParentDiv {
   width: 400px;
-  height: 350px;
+  height: 400px;
   background-color: $primary-color;
   box-shadow: $btn-shadow;
   padding: 30px;

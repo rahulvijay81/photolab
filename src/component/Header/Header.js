@@ -17,17 +17,11 @@ function Header() {
         <div className='brandName'>
           Photo Lab
         </div>
-        <div className='searcharea'>
-          <input
-            type="text"
-            placeholder='Search for creators,images'
-          />
-        </div>
         
         <div className='logout'>
           {user && <button onClick={() => {
             firebase.auth().signOut();
-            navigate('/login')
+            navigate('/')
           }} className='logoutbutton'>Log Out</button>
 
           }

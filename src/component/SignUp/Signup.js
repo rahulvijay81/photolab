@@ -1,16 +1,15 @@
 import React from 'react'
-import '../../Style.scss'
-import PasswordChecklist from 'react-password-checklist'
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FirebaseContext } from '../../store/Context'
+import PasswordChecklist from 'react-password-checklist'
+import '../../Style.scss'
 
 
 export default function Signup() {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
 
     const { firebase } = useContext(FirebaseContext)
@@ -23,7 +22,6 @@ export default function Signup() {
                 firebase.firestore().collection('users').add({
                     id: result.user.uid,
                     username: username,
-                    phone: phone
                 }).then(() => {
                     navigate('/login')
                 })
@@ -34,8 +32,11 @@ export default function Signup() {
     return (
         <div>
             <div className="signupParentDiv">
+                <div className='brandName' style={{textAlign: 'center'}}>
+                    Photo Lab
+                </div>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="fname">Username</label>
+                    <label htmlFor="fname">username</label>
                     <br />
                     <input
                         className="input"
@@ -57,17 +58,7 @@ export default function Signup() {
                         name="email"
                     />
                     <br />
-                    <label htmlFor="lname">Phone</label>
-                    <br />
-                    <input
-                        className="input"
-                        type="number"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        id="lname"
-                        name="phone"
-                    />
-                    <br />
+                   
                     <label htmlFor="lname">Password</label>
                     <br />
                     <input
@@ -83,7 +74,7 @@ export default function Signup() {
                         minLength={10}
                         value={password}
                         valueAgain={password}
-                        onChange={(isValid) => {}}
+                        onChange={(isValid) => { }}
                     />
                     <br />
                     <br />
