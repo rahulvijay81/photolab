@@ -11,30 +11,44 @@ export default function Signup() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [error, setError] = useState('')
     const { firebase } = useContext(FirebaseContext)
 
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        firebase.auth().createUserWithEmailAndPassword(email, password).then((result) => {
-            result.user.updateProfile({ displayName: username }).then(() => {
-                firebase.firestore().collection('users').add({
-                    id: result.user.uid,
-                    username: username,
-                }).then(() => {
-                    navigate('/login')
-                })
+        const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!username || !email || !password) {
+            setError('All fields are required');
+            return;
+        }
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+            setError('Invalid email address');
+            return;
+        }
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((result) => {
+                result.user.updateProfile({ displayName: username })
+                    .then(() => {
+                        firebase.firestore().collection('users').add({
+                            id: result.user.uid,
+                            username: username,
+                        }).then(() => {
+                            navigate('/')
+                        })
+                    })
+            }).catch((error) => {
+                setError(error.message);
             })
-        })
     }
+
 
     return (
         <div>
             <div className="signupParentDiv">
-                <div className='brandName' style={{textAlign: 'center'}}>
+                <div className='brandName' style={{ textAlign: 'center' }}>
                     Photo Lab
                 </div>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <label htmlFor="fname">username</label>
                     <br />
@@ -45,6 +59,7 @@ export default function Signup() {
                         onChange={(e) => setUsername(e.target.value)}
                         id="fname"
                         name="name"
+                        required
                     />
                     <br />
                     <label htmlFor="fname">Email</label>
@@ -56,9 +71,10 @@ export default function Signup() {
                         onChange={(e) => setEmail(e.target.value)}
                         id="fname"
                         name="email"
+                        required
                     />
                     <br />
-                   
+
                     <label htmlFor="lname">Password</label>
                     <br />
                     <input
@@ -68,6 +84,7 @@ export default function Signup() {
                         onChange={(e) => setPassword(e.target.value)}
                         id="lname"
                         name="password"
+                        required
                     />
                     <PasswordChecklist
                         rules={["minLength"]}
@@ -78,7 +95,7 @@ export default function Signup() {
                     />
                     <br />
                     <br />
-                    <button>Signup</button>
+                    <button type='submit'>Signup</button>
                 </form>
                 <p href="" onClick={() => {
                     navigate('/login')

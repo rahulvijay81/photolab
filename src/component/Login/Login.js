@@ -12,11 +12,16 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [value, setValue] = useState('')
+  const [error, setError] = useState('')
   const navigate = useNavigate()
   const { firebase } = useContext(FirebaseContext)
 
   const handleLogin = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    if (!email || !password) {
+      setError('please enter your email and password');
+      return;
+    }
     firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
       navigate("/home")
     }).catch((Error) => {
@@ -29,8 +34,8 @@ function Login() {
       setValue(data.user.email)
       localStorage.setItem(email, data.user.email)
       navigate("/home")
-    }).catch((Error)=>{
-      alert(Error.message)
+    }).catch((error) => {
+      alert(error.message)
     })
   }
 
@@ -65,6 +70,7 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <br />
+              {error && <p style={{ color: 'red' }}>{error}</p>}
               <br />
               <button className='login-btn'>Login</button>
               <p>or</p>
