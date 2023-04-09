@@ -1,6 +1,6 @@
-import { Fragment, React } from 'react'
+import React from 'react'
 import '../../Style.scss'
-import { useState, useContext } from 'react'
+import { Fragment, useState, useContext } from 'react'
 import { FirebaseContext, AuthContext } from '../../store/Context'
 
 
