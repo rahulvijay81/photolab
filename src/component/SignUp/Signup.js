@@ -85,20 +85,21 @@ export default function Signup() {
                         name="password"
                         required
                     />
-                    <PasswordChecklist
+                    <PasswordChecklist 
                         rules={["minLength"]}
                         minLength={10}
                         value={password}
                         valueAgain={password}
                         onChange={(isValid) => { }}
+                        className="custom-password-checklist"
                     />
                     <br />
                     <br />
                     <button type='submit'>Signup</button>
                 </form>
-                <p href="" onClick={() => {
-                    navigate('/login')
-                }}>Back to Login Page</p>
+                <p onClick={() => {
+                    navigate('/')
+                }}>already have an account ?</p>
             </div>
         </div>
     );
