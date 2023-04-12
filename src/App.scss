@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
-$font-stack: 'Source Sans Pro', sans-serif;
+$font-stack: "Source Sans Pro", sans-serif;
 $primary-color: #f7f6f2;
 
-*{
-    margin: 0;
-    font-family: $font-stack;
+* {
+  margin: 0;
+  font-family: $font-stack;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
-body{
-    background-color: $primary-color;
+body {
+  background-color: $primary-color;
 }

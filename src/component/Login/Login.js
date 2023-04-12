@@ -33,10 +33,12 @@ function Login() {
     signInWithPopup(auth, provider).then((data) => {
       setValue(data.user.email)
       localStorage.setItem(email, data.user.email)
+      console.log('signup sucessfull')
       navigate("/home")
     }).catch((error) => {
       alert(error.message)
     })
+
   }
 
   useEffect(() => {

@@ -10,7 +10,6 @@ $font-stack: "Source Sans Pro", sans-serif;
 $font-style: Verdana, Geneva, Tahoma, sans-serif;
 $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-
 .bg-login {
   width: 100%;
   height: 100vh;
@@ -216,7 +215,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: transparent;
   border-radius: 10px;
 }
-.upload-btn{
+.upload-btn {
   width: 100px;
   height: 35px;
   background-color: $button-color;
@@ -231,18 +230,17 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .box {
   width: 100%;
-  border-radius: 10px;
 
-  .postimages{
+  .postimages {
     display: inline-block;
     margin-left: 10px;
   }
   .postimages img {
     width: 260px;
     max-width: 100%;
-    height: 180px;
+    height: 200px;
   }
-  .postimages:hover{
+  .postimages:hover {
     transform: scale(1.1);
     transition: 5ms;
   }
@@ -313,7 +311,6 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 @media (max-width: 767px) {
-
   .flex-container {
     display: flex;
     align-items: center;
@@ -323,10 +320,10 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     flex-basis: 0;
     display: none;
   }
-  .flexbox2{
+  .flexbox2 {
     flex-basis: 80%;
   }
-  
+
   .login-box {
     width: 100%;
     height: auto;
@@ -336,32 +333,30 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding-left: 0px;
     padding-top: 0px;
     box-shadow: none;
-  
+
     .input {
       width: 100%;
       height: 35px;
       margin: 0 auto;
     }
-  
   }
-  
+
   .login-btn {
     width: 100%;
     height: 40px;
   }
-  
+
   .signup-btn {
     width: 100%;
     height: 50px;
   }
-   
+
   .create-btn {
     margin-top: 10px;
-  
   }
-  
+
   // header style
-  
+
   .headerChildDiv {
     width: 90%;
   }
@@ -369,7 +364,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding-left: 20px;
     font-size: 32px;
   }
-  
+
   .logoutbutton {
     width: 100px;
     height: 35px;
@@ -379,10 +374,10 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 100%;
     height: 240px;
     border-radius: 15px;
-  
+
     .profile {
       width: 100%;
-  
+
       h6 {
         font-size: 14px;
         font-weight: 700;
@@ -399,7 +394,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     height: 100%;
     background-color: transparent;
   }
-  .upload-btn{
+  .upload-btn {
     width: 100px;
     height: 35px;
     margin-left: 10px;
@@ -408,27 +403,27 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   .box {
     width: 100%;
     border-radius: 10px;
-  
-    .postimages{
+
+    .postimages {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-left: 0px !important;
     }
     .postimages img {
-      width: 95%;
+      width: 90%;
       max-width: 100%;
       height: 200px;
       margin-top: 5px;
     }
-    .postimages:hover{
+    .postimages:hover {
       transform: scale(1.1);
       transition: 5ms;
     }
   }
-  
+
   // singup page style
-  
+
   .signupParentDiv {
     width: 85%;
     height: auto;
@@ -440,7 +435,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transform: none;
     position: relative;
     box-shadow: none;
-  } 
+  }
   .signupParentDiv input {
     width: 95%;
     height: 30px;
@@ -453,7 +448,6 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: block;
     margin: 0 auto;
     border-radius: 5px;
-
   }
   .signupParentDiv p {
     padding-top: 40px;

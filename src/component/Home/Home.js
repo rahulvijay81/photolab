@@ -5,8 +5,8 @@ import Posts from '../Post/Posts'
 function Home() {
   return (
     <div>
-      <Header/>
-      <Posts/>
+      <Header />
+      <Posts />
     </div>
   )
 }

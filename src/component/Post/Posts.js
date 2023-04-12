@@ -29,16 +29,18 @@ function Post() {
   return (
     <div>
       <div className="postarea">
-        <button className='upload-btn' onClick={()=> setShow(!show)}>
+        <button className='upload-btn'
+          onClick={() => setShow(!show)}>
           {show ? "cancel" : "upload"}
         </button>
-        { show && <AddPost/> }
+        {show && <AddPost />}
         <div className="box">
           {products.map(product => {
-            return <div className='postimages' key={product.id} onClick={() => {
-              setPostDetails(product)
-              navigate('/home')
-            }}>
+            return <div className='postimages' key={product.id}
+              onClick={() => {
+                setPostDetails(product)
+                navigate('/home')
+              }}>
               <img key={product.id} src={product.url} alt="" />
             </div>
           })

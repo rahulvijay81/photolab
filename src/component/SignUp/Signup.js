@@ -1,4 +1,4 @@
-import React,{ useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FirebaseContext } from '../../store/Context'
 import PasswordChecklist from 'react-password-checklist'
@@ -14,7 +14,7 @@ export default function Signup() {
     const { firebase } = useContext(FirebaseContext)
 
 
-        const handleSubmit = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         if (!username || !email || !password) {
             setError('All fields are required');
@@ -24,6 +24,7 @@ export default function Signup() {
             setError('Invalid email address');
             return;
         }
+        
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((result) => {
                 result.user.updateProfile({ displayName: username })
@@ -85,7 +86,7 @@ export default function Signup() {
                         name="password"
                         required
                     />
-                    <PasswordChecklist 
+                    <PasswordChecklist
                         rules={["minLength"]}
                         minLength={10}
                         value={password}
