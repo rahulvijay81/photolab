@@ -1,103 +1,138 @@
-import React, { useEffect } from 'react'
-import { FcGoogle } from 'react-icons/fc';
-import { useState, useContext } from 'react';
-import { FirebaseContext } from '../../store/Context';
-import { useNavigate } from 'react-router-dom';
-import { auth, provider } from '../../firebase/Config'
-import { signInWithPopup } from 'firebase/auth';
-import '../../Style.scss'
-
+import React, { useEffect } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { useContext } from "react";
+import { FirebaseContext } from "../../store/Context";
+import { useNavigate } from "react-router-dom";
+import { auth, provider } from "../../firebase/Config";
+import { signInWithPopup } from "firebase/auth";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import "../../Style.scss";
 
 function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [value, setValue] = useState('')
-  const [error, setError] = useState('')
-  const navigate = useNavigate()
-  const { firebase } = useContext(FirebaseContext)
+  const navigate = useNavigate();
+  const { firebase } = useContext(FirebaseContext);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (!email || !password) {
-      setError('please enter your email and password');
-      return;
-    }
-    firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
-      navigate("/home")
-    }).catch((Error) => {
-      alert(Error.message)
-    })
-  }
+  const initialValues = {
+    email: "",
+    password: "",
+  };
 
-  const handleClick = () => {
-    signInWithPopup(auth, provider).then((data) => {
-      setValue(data.user.email)
-      localStorage.setItem(email, data.user.email)
-      console.log('signup sucessfull')
-      navigate("/home")
-    }).catch((error) => {
-      alert(error.message)
-    })
+  const validationSchema = Yup.object({
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string().required("Required"),
+  });
 
-  }
+  const handleFormSubmit = (values) => {
+    const { email, password } = values;
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        navigate("/home");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((data) => {
+        localStorage.setItem("email", data.user.email);
+        console.log("signup successful");
+        navigate("/home");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: handleFormSubmit,
+  });
+
+  const { values, touched, errors, handleChange, handleSubmit } = formik;
 
   useEffect(() => {
-    setValue(localStorage.getItem('email'))
-  }, [])
+    const email = localStorage.getItem("email");
+    if (email) {
+      formik.setValues({ ...values, email });
+    }
+  }, [formik, values]);
 
   return (
-    <div className='bg-login'>
-      <div className='flex-container'>
+    <div className="bg-login">
+      <div className="flex-container">
         <div className="flexbox1">
-          <div className="loginimage" />
+          <div className="loginimg" />
         </div>
         <div className="flexbox2">
-          <div className='login-box'>
-            <form onSubmit={handleLogin}>
-              <label htmlFor="lname">E-mail</label>
-              <br />
-              <input className='input'
-                type="email"
-                id="lname"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <br />
-              <label htmlFor="lname">Password</label>
-              <br />
-              <input className='input'
-                type="password"
-                id="lname"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <br />
-              {error && <p style={{ color: 'red' }}>{error}</p>}
-              <br />
-              <button className='login-btn'>Login</button>
+          <div className="login-box">
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="email">E-mail</label>
+              <div className="input">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={values.email}
+                  onChange={handleChange}
+                />
+              </div>
+              {errors.email && touched.email && (
+                <p style={{ color: "red", fontSize: "12px" }}>
+                  {errors.password}
+                </p>
+              )}
+              <label htmlFor="password">Password</label>
+              <div className="input">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={values.password}
+                  onChange={handleChange}
+                />
+              </div>
+              {errors.password && touched.password && (
+                <p style={{ color: "red", fontSize: "12px" }}>
+                  {errors.password}
+                </p>
+              )}
+              <button className="login-btn" type="submit">
+                Login
+              </button>
               <p>or</p>
-              {value ? value :
-                <button
-                  onClick={handleClick}
-                  className='signup-btn'>
-                  <FcGoogle
-                    className='icon'
-                  />
-                  Sign-in with google</button>
-              }
+              <button onClick={handleGoogleSignIn} className="signup-btn">
+                <FcGoogle
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    paddingRight: "10px",
+                  }}
+                />
+                Sign-in with Google
+              </button>
               <br />
-              <br />
-              <p className='create-btn'>Don't have an account?<span
-                onClick={() => {
-                  navigate("/signup")
-                }}
-              > Sign Up</span></p>
+              <p className="create-btn">
+                Don't have an account?
+                <span
+                  onClick={() => {
+                    navigate("/signup");
+                  }}
+                >
+                  Sign Up
+                </span>
+              </p>
             </form>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
